@@ -1,0 +1,29 @@
+{
+  "name": "phaser3-ace",
+  "version": "1.0.9",
+  "description": "A Phaser 3 game with ace editor",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --mode development --port=3000",
+    "prod": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/photonstorm/phaser3-project-template.git"
+  },
+  "author": "selcukc",
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "babel-loader": "^8.0.4",
+    "raw-loader": "^0.5.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.2.0",
+    "brace": "^0.11.1",
+    "phaser": "^3.3.0"
+  }
+}
