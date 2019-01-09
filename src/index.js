@@ -6,6 +6,7 @@ import { oyun, player } from './js/game';
 
 const editor = ace.edit('editor');
 editor.getSession().setMode('ace/mode/javascript');
+editor.setTheme("ace/theme/monokai");
 editor.setFontSize(20);
 editor.setValue("moveRight();");
 var Range = ace.acequire('ace/range').Range;
@@ -14,7 +15,7 @@ document.getElementById('runGame').addEventListener('click', () => {
   var code = editor.getValue().split(/\r?\n/);
   console.log(code);
   for (let i = 0; i < code.length; i++) {
-    oyun.time.delayedCall(1000 * i, move, [i, code[i]], this);
+    oyun.time.delayedCall(1000 * i, move, [i, code[i]], oyun);
     // oyun.time.addEvent({ delay: 500 * i, callback: move, args: [code[i]], callbackScope: this });
   }
 });
@@ -22,7 +23,7 @@ document.getElementById('runGame').addEventListener('click', () => {
 function move(i, direction) {
   const t = {
     targets: player,
-    duration: 900,
+    duration: 800,
     ease: 'Linear',
     onStart: startAnimation,
     onStartParams: [i, 'highlight'],
@@ -48,6 +49,7 @@ function move(i, direction) {
 }
 
 function startAnimation(t, arr, i, className) {
+  console.log(player.x);
   highlight(i, className);
 }
 
